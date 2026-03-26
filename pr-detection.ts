@@ -1,6 +1,6 @@
 import { $ } from 'zx';
-import { PrInfoSchema, RepoInfoSchema } from './types.js';
-import type { PrInfo } from './types.js';
+import { PrInfoSchema, RepoInfoSchema } from './types.ts';
+import type { PrInfo } from './types.ts';
 
 $.verbose = false;
 

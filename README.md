@@ -1,6 +1,6 @@
 # gh-pr-comments-channel
 
-A [Claude Code channel](https://code.claude.com/docs/en/channels-reference) that surfaces GitHub PR comments and CI check results directly into your Claude Code session.
+A [Claude Code channel plugin](https://code.claude.com/docs/en/channels-reference) that surfaces GitHub PR comments and CI check results directly into your Claude Code session.
 
 When your current git branch is associated with a pull request, this channel:
 
@@ -13,56 +13,25 @@ All events are wrapped in XML tags (`<pr-comment-context>`, `<ci-check-context>`
 
 ## Prerequisites
 
-- [GitHub CLI (`gh`)](https://cli.github.com/) — installed and authenticated
 - [Bun](https://bun.sh/) >= 1.0
+- [GitHub CLI (`gh`)](https://cli.github.com/) — installed and authenticated
 - [rtk](https://github.com/rtk-ai/rtk) (optional) — compresses CI failure logs by 60-90%. Falls back to truncation if not installed.
 
 ## Installation
 
 ```bash
-git clone https://github.com/mattapperson/gh-pr-comments-channel.git
-cd gh-pr-comments-channel
-bun install
-bun run build
+claude plugin install mattapperson/gh-pr-comments-channel
 ```
 
-## Configuration
+Then start Claude Code with the channel enabled:
 
-Add to your `.mcp.json` (per-project) or `~/.claude.json` (global):
-
-```json
-{
-  "mcpServers": {
-    "gh-pr-comments": {
-      "type": "stdio",
-      "command": "node",
-      "args": ["/path/to/gh-pr-comments-channel/dist/channel.js"],
-      "env": {
-        "POLL_INTERVAL_MS": "30000"
-      }
-    }
-  }
-}
+```bash
+claude --channels plugin:github-pr@mattapperson/gh-pr-comments-channel
 ```
 
-Or run directly with `bun` during development:
+During the research preview, add `--dangerously-load-development-channels`.
 
-```json
-{
-  "mcpServers": {
-    "gh-pr-comments": {
-      "type": "stdio",
-      "command": "bun",
-      "args": ["run", "/path/to/gh-pr-comments-channel/src/channel.ts"],
-      "env": {
-        "POLL_INTERVAL_MS": "30000"
-      }
-    }
-  }
-}
-```
-
-During the research preview, start Claude Code with `--dangerously-load-development-channels`.
+Run `/github-pr:configure` to verify prerequisites and check the current channel status.
 
 ## Environment Variables
 

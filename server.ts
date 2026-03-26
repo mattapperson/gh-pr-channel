@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -8,16 +8,16 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 import { $ } from 'zx';
 import { z } from 'zod';
-import { loadEnv } from './env.js';
-import { detectPr } from './pr-detection.js';
-import { fetchAllCommentList } from './comment-fetcher.js';
-import { formatCommentContent, formatCiCheckContent } from './comment-formatter.js';
+import { loadEnv } from './env.ts';
+import { detectPr } from './pr-detection.ts';
+import { fetchAllCommentList } from './comment-fetcher.ts';
+import { formatCommentContent, formatCiCheckContent } from './comment-formatter.ts';
 import {
   fetchCheckList,
   diffCheckStateList,
   fetchFailureLogs,
-} from './ci-checker.js';
-import type { PrInfo, CiCheckState } from './types.js';
+} from './ci-checker.ts';
+import type { PrInfo, CiCheckState } from './types.ts';
 
 $.verbose = false;
 

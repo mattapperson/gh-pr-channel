@@ -1,16 +1,11 @@
 {
-  "name": "gh-pr-comments-channel",
+  "name": "claude-channel-github-pr",
   "version": "0.1.0",
   "description": "Claude Code channel for GitHub PR comments and CI checks",
   "type": "module",
-  "bin": {
-    "gh-pr-comments-channel": "./dist/channel.js"
-  },
-  "main": "./dist/channel.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "bun run src/channel.ts",
-    "typecheck": "tsc --noEmit"
+    "start": "bun install --no-summary && bun server.ts",
+    "dev": "bun server.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.12.1",
@@ -18,10 +13,6 @@
     "zx": "8.5.4"
   },
   "devDependencies": {
-    "@types/bun": "1.2.18",
-    "typescript": "5.8.3"
-  },
-  "engines": {
-    "node": ">=20"
+    "@types/bun": "1.2.18"
   }
 }

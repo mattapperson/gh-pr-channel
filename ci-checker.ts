@@ -1,6 +1,6 @@
 import { $ } from 'zx';
-import { GhCheckListSchema } from './types.js';
-import type { PrInfo, CiCheckState } from './types.js';
+import { GhCheckListSchema } from './types.ts';
+import type { PrInfo, CiCheckState } from './types.ts';
 
 $.verbose = false;
 

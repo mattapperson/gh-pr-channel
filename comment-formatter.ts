@@ -1,5 +1,5 @@
-import { CommentType } from './types.js';
-import type { NormalizedComment, CommentMeta, CiCheckState, CiCheckMeta } from './types.js';
+import { CommentType } from './types.ts';
+import type { NormalizedComment, CommentMeta, CiCheckState, CiCheckMeta } from './types.ts';
 
 //#region Comment Formatting
 

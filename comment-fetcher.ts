@@ -3,8 +3,8 @@ import {
   GhIssueCommentListSchema,
   GhReviewCommentListSchema,
   CommentType,
-} from './types.js';
-import type { PrInfo, NormalizedComment } from './types.js';
+} from './types.ts';
+import type { PrInfo, NormalizedComment } from './types.ts';
 
 $.verbose = false;
 

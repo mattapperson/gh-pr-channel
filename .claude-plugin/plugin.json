@@ -1,0 +1,6 @@
+{
+  "name": "github-pr",
+  "description": "GitHub PR channel for Claude Code — surfaces PR comments, inline code reviews, and CI check results as ambient context. Reply to comments directly.",
+  "version": "0.1.0",
+  "keywords": ["github", "pr", "pull-request", "code-review", "ci", "channel", "mcp"]
+}
