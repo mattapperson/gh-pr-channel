@@ -1,13 +1,13 @@
-# gh-pr-comments-channel
+# gh-pr-channel
 
-A [Claude Code channel plugin](https://code.claude.com/docs/en/channels-reference) that surfaces GitHub PR comments and CI check results directly into your Claude Code session.
+A [Claude Code channel plugin](https://code.claude.com/docs/en/channels-reference) that gives Claude ambient awareness of your GitHub pull request — comments, code reviews, and CI status.
 
-When your current git branch is associated with a pull request, this channel:
+When your current git branch is associated with a PR, this channel:
 
-- Pushes existing PR comments and inline code review comments as ambient context
-- Polls for new comments every 30 seconds
-- Monitors CI check statuses and surfaces failures with compressed logs
-- Provides reply tools so Claude can respond to comments directly
+- Surfaces PR comments and inline code review threads
+- Monitors CI checks and surfaces failures with compressed logs
+- Polls for updates every 30 seconds
+- Provides reply tools so Claude can respond to reviews directly
 
 All events are wrapped in XML tags (`<pr-comment-context>`, `<ci-check-context>`) that signal to Claude this is background information — it won't interrupt whatever task is currently in progress.
 
@@ -24,13 +24,13 @@ The channel auto-detects your auth method. When `gh` CLI is available it uses `g
 ## Installation
 
 ```bash
-claude plugin install mattapperson/gh-pr-comments-channel
+claude plugin install mattapperson/gh-pr-channel
 ```
 
 Then start Claude Code with the channel enabled:
 
 ```bash
-claude --channels plugin:github-pr@mattapperson/gh-pr-comments-channel
+claude --channels plugin:github-pr@mattapperson/gh-pr-channel
 ```
 
 During the research preview, add `--dangerously-load-development-channels`.
