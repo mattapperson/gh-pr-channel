@@ -91,7 +91,7 @@ Check statuses are monitored for state transitions. Failed checks include compre
 </ci-check-context>
 ```
 
-If `rtk` is installed, failure logs are compressed (60-90% smaller). Otherwise, raw logs are truncated to ~2000 characters with head and tail preserved.
+If [`rtk`](https://github.com/rtk-ai/rtk) is installed, failure logs are compressed (60-90% smaller). Otherwise, raw logs are truncated to ~2000 characters with head and tail preserved.
 
 ### Reply Tools
 
